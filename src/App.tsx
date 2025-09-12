@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BlurImage } from "./components/BlurImage";
 
 // Import local images
 // import image1 from "./assets/images/webp/photo-1501785888041-af3ef285b470.webp";
@@ -14,15 +15,15 @@ import { motion } from "framer-motion";
 // import image9 from "./assets/images/webp/photo-1502082553048-f009c37129b9.webp";
 
 const homeImages = [
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?&fm=avif",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?&fm=avif",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?&fm=avif",
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?&fm=avif",
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?&fm=avif",
-  "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?&fm=avif",
-  "https://images.unsplash.com/photo-1464820453369-31d2c0b651af?&fm=avif",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?&fm=avif",
-  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?&fm=avif",
+  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?",
+  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?",
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?",
+  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?",
+  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?",
+  "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?",
+  "https://images.unsplash.com/photo-1464820453369-31d2c0b651af?",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?",
+  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?",
 ];
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -74,12 +75,11 @@ const Home = () => (
           className="overflow-hidden rounded-2xl shadow-lg bg-white flex flex-col items-center hover:shadow-2xl transition-shadow duration-300"
         >
           <img
-            src={src}
+            src={src + "&fm=avif"}
             alt={`Home Gallery Image ${i + 1}`}
             width={800}
             height={500}
-            className="w-64 h-40 object-cover rounded-lg"
-            loading="lazy"
+            className="w-64 h-40"
           />
         </div>
       ))}
